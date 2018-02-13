@@ -3,7 +3,6 @@ class Elevator {
     this.floor      = 0;
     this.MAXFLOOR   = 10;
     this.requests   = [];
-    // this.idle = true; //when true, the elevator is not serving any request
     this.waitingList = [];
     this.passengers = [];
     this.direction  = "";
@@ -13,7 +12,6 @@ class Elevator {
   start(){
     this.intervalId = setInterval(() => {
       this.update();
-      // this.floorUp();
     }, 1000);
     
    }
@@ -40,7 +38,6 @@ whereWhat(){
   if(this.requests[0] > this.floor){
     this.floorUp();
   } else if (this.requests[0] < this.floor){
-    // console.log("======= req[0]", this.requests[0]);
     this.floorDown();
   } else {
     this.requests = this.requests.filter((any) => {
